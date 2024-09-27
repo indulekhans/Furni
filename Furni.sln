@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34931.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Furni", "Furni\Furni.csproj", "{F535C13D-17E0-4CDA-9B50-CD156038061B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F535C13D-17E0-4CDA-9B50-CD156038061B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F535C13D-17E0-4CDA-9B50-CD156038061B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F535C13D-17E0-4CDA-9B50-CD156038061B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F535C13D-17E0-4CDA-9B50-CD156038061B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B705B3C1-C29A-436D-A77D-0478E37577C9}
+	EndGlobalSection
+EndGlobal
