@@ -60,7 +60,7 @@
                 <li class="active"> <a href="index.html">Home</a></li>
                  <li class="active"> <a href="login.aspx">Login</a></li>
                                         
-                                        <li > <a >Register as</a></li>
+                                        <li > Register as</li>
                                          <li class="active"><a href="Admin.aspx">  <a >Admin</a></li>
                                               
                                         <li class="active"><a href="User.aspx">User</a></li>

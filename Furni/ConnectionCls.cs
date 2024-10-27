@@ -26,6 +26,7 @@ namespace Furni
             cmd = new SqlCommand(sq, con);
             con.Open();
             
+            
             int i = cmd.ExecuteNonQuery();
             con.Close();
             return i;
@@ -92,6 +93,18 @@ namespace Furni
             DataSet ds = new DataSet();
             da.Fill(ds);
             return ds;
+        }
+        public int fn_nonquery_stored(SqlCommand cmd)
+        {
+            if(con.State==ConnectionState.Open)
+            {
+                con.Close();
+            }
+            cmd.Connection = con;
+            con.Open();
+            int i=cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
         }
 
     }

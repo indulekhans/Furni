@@ -37,5 +37,10 @@ namespace Furni
         {
             Response.Redirect("Editproduct.aspx");
         }
+
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }

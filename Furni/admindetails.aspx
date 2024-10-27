@@ -17,7 +17,8 @@
             <td>&nbsp;</td>
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style1">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -30,6 +31,30 @@
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style1">
+                <asp:ImageButton ID="ImageButton5" runat="server" Height="87px" ImageUrl="~/photo2/cfeedback.jpg" PostBackUrl="~/adminreply.aspx" Width="167px" />
+            </td>
+            <td>&nbsp;</td>
+            <td>
+                <asp:ImageButton ID="ImageButton6" runat="server" Height="71px" ImageUrl="~/photo2/userdtls.jpg" PostBackUrl="~/adminbilldetails.aspx" Width="103px" />
+                <br />
+                <asp:Label ID="Label7" runat="server" BackColor="#FFCCFF" Text="Click button to View Bill details"></asp:Label>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style1">
+                &nbsp;</td>
+            <td>&nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

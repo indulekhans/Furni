@@ -179,7 +179,9 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="Label12" runat="server" Text="Label" Visible="False"></asp:Label>
+            </td>
             <td>&nbsp;</td>
         </tr>
     </table>

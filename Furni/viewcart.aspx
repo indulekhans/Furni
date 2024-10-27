@@ -63,9 +63,9 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td class="auto-style3">
-                <asp:Label ID="Label2" runat="server" BackColor="Aqua" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Text="Grand Total"></asp:Label>
+                <asp:Label ID="Label2" runat="server" BackColor="Aqua" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Text="Grand Total" Visible="False"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹
-                <asp:Label ID="Label3" runat="server" BackColor="Aqua" Font-Bold="True" Font-Italic="True" Font-Size="Medium"></asp:Label>
+                <asp:Label ID="Label3" runat="server" BackColor="Aqua" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Visible="False"></asp:Label>
             </td>
             <td>
                 <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/photo2/confirm.jpg" OnClick="ImageButton1_Click" Width="156px" />
@@ -75,7 +75,9 @@
         <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3">
+                <asp:Label ID="Label4" runat="server" Font-Bold="True" ForeColor="#FF0066" Text="Label" Visible="False"></asp:Label>
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>

@@ -45,6 +45,8 @@ namespace Furni
             {
                 string inslog = "insert into logt values(" + rid + ",'" + TextBox8.Text + "','" + TextBox9.Text + "','user')";
                 int m = ob.f_nonquery(inslog);
+                Label12.Visible = true;
+                Label12.Text = "User Registration Successfull";
 
             }
         }
@@ -78,7 +80,7 @@ namespace Furni
             DropDownList2.DataTextField = "District_name";
             DropDownList2.DataSource = ds;
             DropDownList2.DataBind();
-            DropDownList1.Items.Insert(0, "--Select--");
+            DropDownList2.Items.Insert(0, "--Select--");
 
 
 

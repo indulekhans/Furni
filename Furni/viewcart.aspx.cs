@@ -18,10 +18,23 @@ namespace Furni
             {
                 gridbind_fn();
             }
-            string csum = "select sum(Total_Price) from cartt where UserId="+Session["uid"]+"";
-            int su = Convert.ToInt32(ob10.f_scalar(csum));
-            Label3.Text = su.ToString();
-            
+        string max="select count(cartid) from cartt where UserId = " + Session["uid"] + "";
+            string mx = ob10.f_scalar(max);  
+            int m = Convert.ToInt32(mx);
+            if (m == 0)
+            {
+                Label4.Visible = true;
+                Label4.Text = "Your cart is empty!";
+            }
+            else
+            {
+                string csum = "select sum(Total_Price) from cartt where UserId=" + Session["uid"] + "";
+                int su = Convert.ToInt32(ob10.f_scalar(csum));
+                Label2.Visible = true;
+                Label3.Visible = true;
+                Label3.Text = su.ToString();
+            }
+
 
 
         }
@@ -48,7 +61,7 @@ namespace Furni
 
             foreach(int i in crtid)
             {
-                string al = "select * from cartt where cartid=" + i + "";
+                string al = "select * from cartt where cartid=" + i + " and  UserId=" + Session["uid"] + "";
                 SqlDataReader drc = ob10.f_reader(al);
              
                 int pid = 0;
@@ -62,20 +75,19 @@ namespace Furni
                     totprice = Convert.ToInt32(drc["Total_Price"]);
 
                 }
-                string ins = "insert into ordert values(" + pid + "," + Session["uid"] + " ," + qty + "," + totprice + ",'" + DateTime.Now.ToShortDateString() + "','oredered')";
+                string ins = "insert into ordert values(" + pid + "," + Session["uid"] + " ," + qty + "," + totprice + ",'" + DateTime.Now.ToShortDateString() + "','ordered')";    
                 ob10.f_nonquery(ins);
-                string delc = "delete from cartt where ProductId=pid AND UserId=" + Session["uid"] + "";
+                string delc = "delete from cartt where ProductId="+pid+" AND UserId=" + Session["uid"] + "";
                 ob10.f_nonquery(delc);
 
             }
-            string sumtot = "select sum(Total_Price)from ordert";
+            string sumtot = "select sum(Total_Price)from ordert where UserId=" + Session["uid"] + "and status='ordered'";
             int grand_total = Convert.ToInt32(ob10.f_scalar(sumtot));
-            string sbill= "insert into bill_t values(" + Session["uid"] + ","+grand_total+",'" + DateTime.Now.ToShortDateString() + "')";
+            string sbill= "insert into bill_t values(" + Session["uid"] + ","+grand_total+",'" + DateTime.Now.ToShortDateString() + "','ordered')";
             ob10.f_nonquery(sbill);
             Response.Redirect("viewyourBill.aspx");
-
-
         }
+
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -114,6 +126,11 @@ namespace Furni
             
             ob10.f_nonquery(updt);
             gridbind_fn();
+            string csum = "select sum(Total_Price) from cartt where UserId=" + Session["uid"] + "";
+            int su = Convert.ToInt32(ob10.f_scalar(csum));
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label3.Text = su.ToString();
 
         }
 
@@ -124,6 +141,11 @@ namespace Furni
             string cdel = "delete from cartt where ProductId=" + getid + "";
             ob10.f_nonquery(cdel);
             gridbind_fn();
+            string csum = "select sum(Total_Price) from cartt where UserId=" + Session["uid"] + "";
+            int su = Convert.ToInt32(ob10.f_scalar(csum));
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label3.Text = su.ToString();
         }
     }
 }

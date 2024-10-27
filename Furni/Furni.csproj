@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,8 +73,40 @@
     <Content Include="addcategory.aspx" />
     <Content Include="Addproduct.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="adminbilldetails.aspx" />
     <Content Include="admindetails.aspx" />
+    <Content Include="adminreply.aspx" />
     <Content Include="blog.html" />
+    <Content Include="Connected Services\balamt_services\Furni.balamt_services.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\balamt_services\Service.disco" />
+    <None Include="Connected Services\balamt_services\configuration91.svcinfo" />
+    <None Include="Connected Services\balamt_services\configuration.svcinfo" />
+    <None Include="Connected Services\balamt_services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\balamt_service\Furni.balamt_service.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\balamt_services\Service.wsdl" />
+    <None Include="Connected Services\balamt_services\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\balamt_services\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\balamt_services\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\balamt_service\Service.disco" />
+    <None Include="Connected Services\balamt_service\configuration91.svcinfo" />
+    <None Include="Connected Services\balamt_service\configuration.svcinfo" />
+    <None Include="Connected Services\balamt_service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="contact.html" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -112,6 +146,7 @@
     <Content Include="images\maps-and-flags.png" />
     <Content Include="images\menu_icon.png" />
     <Content Include="index.html" />
+    <Content Include="indivfbform.aspx" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.0.0.min.js" />
@@ -120,15 +155,24 @@
     <Content Include="js\jquery.validate.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="Pdtpht\gtable.jpg" />
     <Content Include="Pdtpht\mchair.jpg" />
     <Content Include="Pdtpht\wchair.jpg" />
+    <Content Include="photo1\addacc.jpg" />
+    <Content Include="photo1\continue shop.jpg" />
+    <Content Include="photo1\Continue.jpg" />
+    <Content Include="photo1\contonue2.jpg" />
+    <Content Include="photo1\furnimage.jpg" />
     <Content Include="photo1\istockphoto-1435982017-612x612.jpg" />
     <Content Include="photo1\pay.jpg" />
-    <Content Include="photo2\addtocart.png" />
+    <Content Include="photo1\proceedtopay.jpg" />
+    <Content Include="photo2\cfeedback.jpg" />
     <Content Include="photo2\confirm.jpg" />
     <Content Include="photo2\continueshopping.jpg" />
+    <Content Include="photo2\feedback.jpg" />
     <Content Include="photo2\istockphoto-1256772810-612x612.jpg" />
+    <Content Include="photo2\userdtls.jpg" />
     <Content Include="photo2\viewcart.jpg" />
     <Content Include="ph\istockphoto-966443884-612x612.jpg" />
     <Content Include="product.html" />
@@ -137,6 +181,7 @@
     <Content Include="product_detail3.html" />
     <Content Include="User.aspx" />
     <Content Include="userdetails.aspx" />
+    <Content Include="userfeedback.aspx" />
     <Content Include="viewcart.aspx" />
     <Content Include="viewyourBill.aspx" />
     <Content Include="Web.config" />
@@ -163,12 +208,36 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="adminbilldetails.aspx.cs">
+      <DependentUpon>adminbilldetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminbilldetails.aspx.designer.cs">
+      <DependentUpon>adminbilldetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admindetails.aspx.cs">
       <DependentUpon>admindetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admindetails.aspx.designer.cs">
       <DependentUpon>admindetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminreply.aspx.cs">
+      <DependentUpon>adminreply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminreply.aspx.designer.cs">
+      <DependentUpon>adminreply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\balamt_services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\balamt_service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ConnectionCls.cs" />
     <Compile Include="editcategory.aspx.cs">
@@ -192,12 +261,26 @@
     <Compile Include="Editproduct.aspx.designer.cs">
       <DependentUpon>Editproduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="indivfbform.aspx.cs">
+      <DependentUpon>indivfbform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indivfbform.aspx.designer.cs">
+      <DependentUpon>indivfbform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="productprofile.aspx.cs">
       <DependentUpon>productprofile.aspx</DependentUpon>
@@ -235,6 +318,13 @@
     <Compile Include="userdetails.aspx.designer.cs">
       <DependentUpon>userdetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="userfeedback.aspx.cs">
+      <DependentUpon>userfeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userfeedback.aspx.designer.cs">
+      <DependentUpon>userfeedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewcart.aspx.cs">
       <DependentUpon>viewcart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +341,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\balamt_service\Service.wsdl" />
+    <None Include="Connected Services\balamt_service\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\balamt_service\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\balamt_service\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
@@ -262,6 +362,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Catpht\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\balamt_services\" />
+    <WCFMetadataStorage Include="Connected Services\balamt_service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
